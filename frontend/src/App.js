@@ -18,16 +18,14 @@ function App() {
   const [instLast, setInstLast] = useState("");
   const [instBio, setInstBio] = useState("");
 
-  // We'll keep track of the current userId (for a student)
-  // If we want to handle instructor, we might store instructorId separately
+  // Keep track of the current userId (for a student)
   const [userId, setUserId] = useState(null);
 
   // For listing events
   const [events, setEvents] = useState([]);
 
-  //////////////////////////////////////////////////
   // 1) Register as Student
-  //////////////////////////////////////////////////
+
   const handleStudentRegister = async () => {
     try {
       const response = await fetch(
@@ -59,9 +57,8 @@ function App() {
     }
   };
 
-  //////////////////////////////////////////////////
   // 2) Register as Instructor
-  //////////////////////////////////////////////////
+
   const handleInstructorRegister = async () => {
     try {
       const response = await fetch(
@@ -81,7 +78,7 @@ function App() {
       const data = await response.json();
       if (data.success) {
         alert("Instructor registered. instructorId = " + data.instructorId);
-        // If you want to do something else, do it here
+
         setView("home");
       } else {
         alert(data.error || "Instructor registration failed");
@@ -92,9 +89,8 @@ function App() {
     }
   };
 
-  //////////////////////////////////////////////////
   // 3) Load Events
-  //////////////////////////////////////////////////
+
   const loadEvents = async () => {
     try {
       const response = await fetch("http://localhost:5000/api/events");
@@ -110,9 +106,8 @@ function App() {
     }
   };
 
-  //////////////////////////////////////////////////
   // 4) Register for an event
-  //////////////////////////////////////////////////
+
   const handleRegisterEvent = async (eventId) => {
     if (!userId) {
       alert(
@@ -138,9 +133,8 @@ function App() {
     }
   };
 
-  //////////////////////////////////////////////////
   // Render pages
-  //////////////////////////////////////////////////
+
   if (view === "home") {
     return (
       <div style={{ padding: 20 }}>
@@ -239,7 +233,7 @@ function App() {
     );
   }
 
-  // After student registers, let's show them the events
+  // After student registers, show them the events
   if (view === "studentEvents") {
     return (
       <div style={{ padding: 20 }}>

@@ -18,10 +18,12 @@ app.post("/api/register-student", async (req, res) => {
        RETURNING user_id`,
       [username, email, password, firstName, lastName]
     );
-
-    const userId = result.rows[0].user_id;
-    res.json({ success: true, userId });
+    res.json({ success: true, userId: result.rows[0].user_id });
   } catch (err) {
+    if (err.code === "23505") {
+      // Violated UNIQUE (email/username)
+      return res.status(409).json({ success: false, error: "Email or username already in use" });
+    }
     console.error(err);
     res.status(500).json({ success: false, error: "Server error" });
   }
@@ -29,25 +31,19 @@ app.post("/api/register-student", async (req, res) => {
 
 // 2) Register Instructor
 app.post("/api/register-instructor", async (req, res) => {
-  const {
-    instructorEmail,
-    instructorPassword,
-    firstName,
-    lastName,
-    biography,
-  } = req.body;
+  const { instructorEmail, instructorPassword, firstName, lastName, biography } = req.body;
   try {
     const result = await pool.query(
-      `INSERT INTO "Instructor" 
-       (instructor_email, instructor_password_hash, first_name, last_name, biography)
+      `INSERT INTO "Instructor" (instructor_email, instructor_password_hash, first_name, last_name, biography)
        VALUES ($1, $2, $3, $4, $5)
        RETURNING instructor_id`,
       [instructorEmail, instructorPassword, firstName, lastName, biography]
     );
-
-    const instructorId = result.rows[0].instructor_id;
-    res.json({ success: true, instructorId });
+    res.json({ success: true, instructorId: result.rows[0].instructor_id });
   } catch (err) {
+    if (err.code === "23505") {
+      return res.status(409).json({ success: false, error: "Instructor email already in use" });
+    }
     console.error(err);
     res.status(500).json({ success: false, error: "Server error" });
   }
