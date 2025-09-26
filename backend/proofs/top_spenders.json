@@ -1,0 +1,56 @@
+[
+  {
+    "user_id": "8",
+    "username": "mikiYoga",
+    "email": "miki@example.com",
+    "spend_packages": "45.00",
+    "spend_merch": "12.00",
+    "total_spend": "57.00",
+    "spend_rank": "1"
+  },
+  {
+    "user_id": "13",
+    "username": "bojan",
+    "email": "bojan@example.com",
+    "spend_packages": "0",
+    "spend_merch": "30.00",
+    "total_spend": "30.00",
+    "spend_rank": "2"
+  },
+  {
+    "user_id": "12",
+    "username": "ana",
+    "email": "ana@example.com",
+    "spend_packages": "25.00",
+    "spend_merch": "0",
+    "total_spend": "25.00",
+    "spend_rank": "3"
+  },
+  {
+    "user_id": "9",
+    "username": "davidG",
+    "email": "david@example.com",
+    "spend_packages": "0",
+    "spend_merch": "0",
+    "total_spend": "0",
+    "spend_rank": "4"
+  },
+  {
+    "user_id": "10",
+    "username": "proba1",
+    "email": "proba1@gmail.com",
+    "spend_packages": "0",
+    "spend_merch": "0",
+    "total_spend": "0",
+    "spend_rank": "4"
+  },
+  {
+    "user_id": "14",
+    "username": "ciro",
+    "email": "ciro@example.com",
+    "spend_packages": "0",
+    "spend_merch": "0",
+    "total_spend": "0",
+    "spend_rank": "4"
+  }
+]

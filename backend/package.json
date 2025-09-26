@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:apply": "node scripts/applyEnhancements.js",
+    "db:seed": "node scripts/seedDemoData.js",
+    "db:proofs": "node scripts/runProof.js",
+    "db:explain": "node scripts/explainQueries.js",
+    "db:reports": "node scripts/runReports.js"
   },
   "keywords": [],
   "author": "",

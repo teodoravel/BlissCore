@@ -1,0 +1,30 @@
+[
+  {
+    "training_id": "7",
+    "training_name": "Vinyasa",
+    "month": "2025-08-31T22:00:00.000Z",
+    "num_bookings": "1",
+    "rank_in_month": "1"
+  },
+  {
+    "training_id": "8",
+    "training_name": "Yin",
+    "month": "2025-08-31T22:00:00.000Z",
+    "num_bookings": "1",
+    "rank_in_month": "1"
+  },
+  {
+    "training_id": "6",
+    "training_name": "Hatha Basics",
+    "month": "2025-05-31T22:00:00.000Z",
+    "num_bookings": "1",
+    "rank_in_month": "1"
+  },
+  {
+    "training_id": "5",
+    "training_name": "Vinyasa Flow",
+    "month": "2025-05-31T22:00:00.000Z",
+    "num_bookings": "1",
+    "rank_in_month": "1"
+  }
+]
