@@ -1,0 +1,32 @@
+{
+  "before": {
+    "class_id": "7",
+    "capacity": 2,
+    "seats_available": 1
+  },
+  "after": {
+    "class_id": "7",
+    "capacity": 2,
+    "seats_available": 0
+  },
+  "afterDelete": {
+    "class_id": "7",
+    "capacity": 2,
+    "seats_available": 1
+  },
+  "statuses": [
+    {
+      "user": "ana",
+      "status": "OK"
+    },
+    {
+      "user": "bojan",
+      "status": "CLASS_FULL"
+    },
+    {
+      "user": "ciro",
+      "status": "CLASS_FULL"
+    }
+  ],
+  "errors": []
+}
